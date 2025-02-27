@@ -1,0 +1,28 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+
+    "allowJs": true,
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+    "types": [
+      "node",
+      "@mescius/wijmo"
+    ],
+    "outDir": "./dist",
+    "noImplicitAny": false
+  }
+}
