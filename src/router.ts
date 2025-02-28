@@ -21,15 +21,15 @@ const routes = [
     path: '/view',
     component: () => import('@/layouts/Default.vue'),
     children: [
-      // {
-      //   path: '/view/list',
-      //   name: 'view.list',
-      //   component: () => import('@/components/ListView.vue'),
-      //   meta: {
-      //     layout: 'auth',
-      //     requiresAuth: true
-      //   }
-      // },
+      {
+        path: '/view/list',
+        name: 'view.list',
+        component: () => import('@/pages/CurrencyTable.vue'),
+        meta: {
+          layout: 'auth',
+          requiresAuth: true
+        }
+      },
       // {
       //   path: '/view/nav',
       //   name: 'view.nav',
