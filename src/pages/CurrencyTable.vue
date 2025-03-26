@@ -157,5 +157,5 @@
     </div>
   </div>
 </template>
-<script lang="ts" src="@/components/WijmoTable"></script>
+<script lang="ts" src="@/script/WijmoTable"></script>
 <style scoped src="../css/wijmotable.css"></style>

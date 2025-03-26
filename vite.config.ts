@@ -12,6 +12,7 @@ export default defineConfig({
   },
   server: {
     host: '127.0.0.1',
+    // historyApiFallback: true,
     proxy: {
       '/api': {
         target: 'https://office.optrak.com/dev/strategic/d/tenant',
@@ -19,7 +20,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false, // Ignore SSL errors (if any)
       },
-      '/graphiql':{
+      '/graphiql': {
         target: 'https://office.optrak.com/dev/strategic/g/data',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/graphiql/, ''),

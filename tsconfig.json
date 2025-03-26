@@ -12,7 +12,7 @@
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
 
     "allowJs": true,
     "paths": {
@@ -20,7 +20,12 @@
     },
     "types": [
       "node",
-      "@mescius/wijmo"
+      "@mescius/wijmo",
+      "vue"
+    ],
+    "include": [
+      "src/**/*",
+      "src/shims-vue.d.ts" // Include your shims file
     ],
     "outDir": "./dist",
     "noImplicitAny": false

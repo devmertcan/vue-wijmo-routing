@@ -3,7 +3,7 @@ import * as wjCore from "@mescius/wijmo";
 import { InputDate, InputTime } from "@mescius/wijmo.input";
 import { DataMap, FlexGrid } from "@mescius/wijmo.grid";
 import { CellMaker, SparklineMarkers } from "@mescius/wijmo.grid.cellmaker";
-import { Country, DataService, KeyValue } from "@/data/data";
+import { Country, DataService, KeyValue } from "@/data/currencydata";
 import { ref, watch, onMounted, defineComponent } from "vue";
 
 export default defineComponent({
@@ -24,14 +24,6 @@ export default defineComponent({
       inputDate: new InputDate(document.createElement("div"), { format: "MM/dd/yyyy", isRequired: false }),
       inputTime: new InputTime(document.createElement("div"), { format: "HH:mm", isRequired: false }),
     });
-
-    // Dark Mode Toggle Function
-    // function toggleDarkMode() {
-    //   isDarkMode.value = !isDarkMode.value;
-    //   localStorage.setItem("darkMode", isDarkMode.value.toString());
-    //   document.body.classList.toggle("dark-mode", isDarkMode.value);
-    // }
-
     onMounted(() => {
       const savedTheme = localStorage.getItem("darkMode");
       if (savedTheme === "true") {
@@ -141,6 +133,7 @@ export default defineComponent({
     // Create Grid Data Source
     function _createItemsSource(counter: number) {
       const data = dataService.value.getData(counter);
+      // console.log(data)
       const view = new wjCore.CollectionView(data, {
         getError: function (item: any, prop: any) {
           const displayName = (flex.value as unknown as FlexGrid).columns.getColumn(prop).header;
